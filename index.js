@@ -1,0 +1,31 @@
+const express = require("express");
+const cors = require("cors");
+const mycon = require("./db");
+
+const app = express();
+require("dotenv").config();
+
+app.use(cors());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json({ limit: "10mb" }));
+
+// mycon.query();
+
+// app.use("/user", console.log("user"));
+// app.use("/product", console.log("product"));
+// app.use("/order", console.log("order"));
+// app.use("/ticket", console.log("ticket"));
+
+const PORT = 5000;
+
+app.get("/", (req, res) => {
+  res.send("homepage");
+});
+
+app.listen(PORT, (err) => {
+  if (err) {
+    console.log("server error", err);
+  } else {
+    console.log(`check running server on url http://localhost:${PORT}`);
+  }
+});
