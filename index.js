@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const mycon = require("./db");
+const spatialRoute = require("./router/spatial.route");
 
 const app = express();
 require("dotenv").config();
@@ -11,10 +12,7 @@ app.use(express.json({ limit: "10mb" }));
 
 // mycon.query();
 
-// app.use("/user", console.log("user"));
-// app.use("/product", console.log("product"));
-// app.use("/order", console.log("order"));
-// app.use("/ticket", console.log("ticket"));
+app.use("/spatial", spatialRoute);
 
 const PORT = 5000;
 
