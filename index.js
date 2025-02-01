@@ -6,6 +6,14 @@ const spatialRoute = require("./router/spatial.route");
 const app = express();
 require("dotenv").config();
 
+const corsOptions = {
+  origin: "https://mfou-web-portal-react.vercel.app",
+  credentials: true,
+  optionSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
+
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json({ limit: "10mb" }));
