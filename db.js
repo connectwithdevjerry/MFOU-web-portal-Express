@@ -9,12 +9,4 @@ const mycon = mysql.createPool({
   connectionLimit: 10,
 });
 
-// mycon.connect((err) => {
-//   if (err) {
-//     console.error("error connecting: " + err);
-//     return;
-//   }
-//   console.log("connected as id " + mycon.threadId);
-// });
-
 module.exports = mycon;
