@@ -7,7 +7,7 @@ const app = express();
 require("dotenv").config();
 
 const corsOptions = {
-  origin: ["https://mfou-web-portal-react.vercel.app", "http://localhost:5173"],
+  origin: ["https://dionwebportal.vercel.app", "http://localhost:5173"],
   credentials: true,
   optionSuccessStatus: 200,
 };
